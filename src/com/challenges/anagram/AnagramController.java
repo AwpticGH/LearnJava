@@ -1,6 +1,4 @@
-package com.challenges.controller;
-
-import com.challenges.model.AnagramModel;
+package com.challenges.anagram;
 
 import java.util.ArrayList;
 import java.util.Arrays;

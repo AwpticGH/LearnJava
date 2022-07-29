@@ -1,12 +1,11 @@
-package com.challenges.main;
+package com.challenges.anagram;
 
-import com.challenges.controller.AnagramController;
-import com.challenges.model.AnagramModel;
+import com.challenges.anagram.AnagramController;
+import com.challenges.anagram.AnagramModel;
 
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.Scanner;
-import java.util.Spliterator;
 
 public class Anagram {
 

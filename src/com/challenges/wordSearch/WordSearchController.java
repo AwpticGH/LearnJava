@@ -1,6 +1,6 @@
-package com.challenges.controller;
+package com.challenges.wordSearch;
 
-import com.challenges.model.WordSearchModel;
+import com.challenges.wordSearch.WordSearchModel;
 
 public class WordSearchController {
 

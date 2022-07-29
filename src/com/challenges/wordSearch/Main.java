@@ -1,11 +1,4 @@
-package com.string;
-
-import com.challenges.controller.WordSearchController;
-import com.challenges.model.WordSearchModel;
-
-import java.util.ArrayList;
-import java.util.Arrays;
-import java.util.Scanner;
+package com.challenges.wordSearch;
 
 public class Main {
     public static void main(String[] args) {
