@@ -35,7 +35,10 @@ public class PangramController {
             else {
                 model.setPangram(true);
             }
-            model.setPerfect(alphaCounter[index] == 1);
+            if (alphaCounter[i] != 1) {
+                model.setPerfect(false);
+            }
+            System.out.println(alphaCounter[i]);
         }
 
         if (model.isPangram()) {

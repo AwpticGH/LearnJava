@@ -3,7 +3,7 @@ package com.challenges.pangram;
 public class PangramModel {
 
     private String text;
-    private boolean perfect;
+    private boolean perfect = true;
     private boolean pangram;
 
     public String getText() {
