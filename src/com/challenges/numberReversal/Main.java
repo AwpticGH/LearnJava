@@ -1,15 +1,12 @@
 package com.challenges.numberReversal;
 
+import java.text.DecimalFormat;
 import java.util.Scanner;
 
 public class Main {
 
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
-        int number = 0;
-        double decimal = 0;
-        StringBuilder backward;
-        String[] backwards;
 
         System.out.println("Input Number or Decimal : ");
         System.out.println("1. Number");
@@ -20,26 +17,49 @@ public class Main {
         switch (choice) {
             case 1 -> {
                 System.out.print("Input Number : ");
-                number = sc.nextInt();
-                backward = new StringBuilder(String.valueOf(number));
-                number = Integer.parseInt(backward.reverse().toString());
-                System.out.println(number);
+                int number = sc.nextInt();
+//                simple(number);
+                notSimple(number);
             }
             case 2 -> {
                 System.out.print("Input Decimal : ");
-                decimal = sc.nextDouble();
-                backward = new StringBuilder(String.valueOf(decimal));
-                System.out.print("Result : ");
-                backward.reverse();
-                backward.deleteCharAt(2);
-                backward.insert(backward.length()-2, '.');
-                decimal = Double.parseDouble(backward.toString());
-                System.out.println(decimal);
+                double number = sc.nextDouble();
+                simple(number);
+//                notSimple(number);
             }
             default -> System.out.println("Not an option");
         }
-
-
     }
 
+    private static void simple(int number) {
+        StringBuilder reverse = new StringBuilder(String.valueOf(number));
+
+        System.out.print("Result : ");
+
+        number = Integer.parseInt(reverse.reverse().toString());
+        System.out.println(number);
+    }
+
+    private static void simple(double number) {
+        StringBuilder reverse = new StringBuilder(String.valueOf(number));
+
+        System.out.print("Result : ");
+
+        reverse.reverse();
+        reverse.deleteCharAt(2);
+        reverse.insert(reverse.length()-2, '.');
+        number = Double.parseDouble(reverse.toString());
+        System.out.println(number);
+    }
+
+    private static int reverseInt = 0;
+
+    private static void notSimple(int number) {
+        while (number != 0) {
+            int remainder = number % 10;
+            reverseInt = (reverseInt*10) + remainder;
+            number = number/10;
+        }
+        System.out.println("Reverse : " + reverseInt);
+    }
 }
