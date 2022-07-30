@@ -7,23 +7,36 @@ public class Main {
     public static void main(String[] args) {
         Scanner sc = new Scanner(System.in);
         int number = 0;
-        int[] backwards;
+        double decimal = 0;
+        StringBuilder backward;
+        String[] backwards;
 
-        System.out.println("Input Number : ");
-        try {
-            number = sc.nextInt();
-            backwards = new int[String.valueOf(number).length()];
-        }
-        catch (Exception e) {
-            System.err.println("Put in a number");
-            System.out.println("Input Number : ");
-            number = sc.nextInt();
-            backwards = new int[String.valueOf(number).length()];
-        }
-        finally {
-            for (int i = String.valueOf(number).length() - 1; i >= 0; i--) {
-//                System.out.print(backwards[i]);
+        System.out.println("Input Number or Decimal : ");
+        System.out.println("1. Number");
+        System.out.println("2. Decimal");
+
+        int choice = sc.nextInt();
+
+        switch (choice) {
+            case 1 -> {
+                System.out.print("Input Number : ");
+                number = sc.nextInt();
+                backward = new StringBuilder(String.valueOf(number));
+                number = Integer.parseInt(backward.reverse().toString());
+                System.out.println(number);
             }
+            case 2 -> {
+                System.out.print("Input Decimal : ");
+                decimal = sc.nextDouble();
+                backward = new StringBuilder(String.valueOf(decimal));
+                System.out.print("Result : ");
+                backward.reverse();
+                backward.deleteCharAt(2);
+                backward.insert(backward.length()-2, '.');
+                decimal = Double.parseDouble(backward.toString());
+                System.out.println(decimal);
+            }
+            default -> System.out.println("Not an option");
         }
 
 
