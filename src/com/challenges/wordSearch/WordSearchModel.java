@@ -1,4 +1,4 @@
-package com.challenges.model;
+package com.challenges.wordSearch;
 
 public class WordSearchModel {
 
